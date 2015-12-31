@@ -10,7 +10,7 @@ config :mikeworks, Mikeworks.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "hqDxTvcj/yUdjph1nVBR2/x6OAm8MlbdKqx3i4jHuZcDrsJHPc86daUbUh7amW+N",
-  render_errors: [accepts: ~w(html json)],
+  render_errors: [accepts: ~w(json)],
   pubsub: [name: Mikeworks.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
