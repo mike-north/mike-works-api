@@ -1,0 +1,18 @@
+language: elixir
+elixir:
+- 1.1.1
+otp_release:
+- 18.1
+sudo: false
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database mikeworks_test;' -U postgres
+deploy:
+  provider: heroku
+  app: mikeworks-api
+  api_key:
+    secure: lrLHrcYJo/TkmVhXfphs/vh7gusfZYxtVKa3JqfKtX6JV48PhklRT7CyZQ/ldxaORLR6vNW3WRZsIFgcbSKlvCYQ0MoqkTUMluAhxKQipq2Z104sJRFUXGeiR6FuTP8FG6Q63OUsm4P91+gviZ3pneTPmdlSrm1UUobAVy8GZTNRRsp6AS7R/S0z2b2wvAlA0tvSZdH3eEO22/C/HDYyZ6M+JooW8B+Zmzeiw1wR9E1z6a1TZ1eRK4C7gBUscTCoAoKYO+uuSsTfQTpcj3uhlKB3OyR3N41GFOdj74JlBJp8IkNNnWWf8QemFrY5MCYUqMVLwBPzb3G8Iy7+oI/0j+konzTewhXvElUC/BZjIS3dwogrC5R20lgyRU9JB8HKZWBMsEdnTZH5AfacLMX6sctMY2mKNp4Ms11DuqXn6cfpMv/IY2t/SEGiGwG2rG3GHXd1XEsT3Zn9Wy9mtiG8N0aweGZRkqG0Voa5Wudw0xC9bqvS2cuIqKWSRULVK5n9JVKAbgaxj2tgXObz8sEAFHH6z06Sn/4Gol7hYe8GPk+s68MWGyBx+uNle43eWPPWUucVsEz5KyTbsL3jL4sEsN2QcA1/ma35kCKdg8zm5mLFucz8yiEgz+iWN9FRBC5Cxb08FV8HdW0wV7Ax3ATedAEl/EDZzCnquWlRE1QUsU8=
+notifications:
+  email:
+    - michael.l.north@gmail.com
