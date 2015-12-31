@@ -15,6 +15,9 @@ defmodule Mikeworks.Router do
 
   scope "/", Mikeworks do
     pipe_through :api
+    scope "/v1", V1, as: :v1 do
+      resources "/trips", TripController
+    end
   end
 
   # Other scopes may use custom stacks.
