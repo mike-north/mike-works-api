@@ -2,11 +2,11 @@ defmodule Mikeworks.V1.TripView do
   use Mikeworks.Web, :view
 
   def render("index.json", %{trips: trips}) do
-    %{data: render_many(trips, Mikeworks.TripView, "trip.json")}
+    %{data: render_many(trips, Mikeworks.V1.TripView, "trip.json")}
   end
 
   def render("show.json", %{trip: trip}) do
-    %{data: render_one(trip, Mikeworks.TripView, "trip.json")}
+    %{data: render_one(trip, Mikeworks.V1.TripView, "trip.json")}
   end
 
   def render("trip.json", %{trip: trip}) do
